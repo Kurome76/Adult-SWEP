@@ -6,3 +6,5 @@ Put into Steam\SteamApps\common\GarrysMod\garrysmod\addons
 Next launch, it should appear in the Weapons tab --> others
 
 Pills are found in the Entities tab --> Adult Swep
+
+Leave bug reports on my steam profile, i rarely check github unless im ready to update.
