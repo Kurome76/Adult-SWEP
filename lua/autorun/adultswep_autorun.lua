@@ -180,14 +180,14 @@ else -- CLIENT
 		
 		if !inDate then
 			if lastUpdate then
-				chat.AddText(Color(255,0,0), "A newer version of Adult SWEP is available! (last updated ", Color(255, 128, 0), os.date("%x", lastUpdate) , Color(255, 0, 0), ")")
+				chat.AddText(Color(255,25,25), "A newer version of Adult SWEP is available! (last updated ", Color(255, 128, 0), os.date("%x", lastUpdate) , Color(255, 0, 0), ")")
 			else
-				chat.AddText(Color(255,0,0), "A newer version of Adult SWEP is available!")
+				chat.AddText(Color(255,25,25), "A newer version of Adult SWEP is available!")
 			end
 			
-			chat.AddText(Color(255,0,0), "Update this server to the latest version at ", Color(255, 128, 0), "https://github.com/Bubbus/ACF-Missiles")
+			chat.AddText(Color(255,25,0), "Update to the latest version at ", Color(255, 128, 0), "https://github.com/Kurome76/Adult-SWEP")
 		else
-			chat.AddText(Color(0,255,64), "Adult SWEP ", Color(0, 192, 42), "is up to date on this server!")
+			chat.AddText(Color(0,255,64), "Adult SWEP ", Color(0, 192, 42), "is up to date!")
 		end
 	end )
 	
