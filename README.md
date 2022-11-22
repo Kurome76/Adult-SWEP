@@ -1,5 +1,5 @@
 # Adult-SWEP
-Weapon for Garry's Mod that allows for mating ingame
+Weapon for Garry's Mod that allows for mating ingame (works on players and NPCs).
 
 Put into Steam\SteamApps\common\GarrysMod\garrysmod\addons
 
