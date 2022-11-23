@@ -1,6 +1,4 @@
 if SERVER then
-	include("gitrc.lua")
-	
 	resource.AddSingleFile("materials/models/condom/condom_texture.vmt")
 	resource.AddSingleFile("materials/models/condom/condom_texture.vtf")
 	resource.AddSingleFile("models/condom/condom.dx80.vtx")
