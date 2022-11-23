@@ -141,3 +141,10 @@ if SERVER then
 	resource.AddFile("sound/adultswep/Throat04.wav")
 	resource.AddFile("sound/adultswep/Throat05.wav")
 end
+
+timer.Simple(2, function()
+	print("[Adult-SWEP] Version 29")
+	if CLIENT then
+		chat.AddText( Color( 25, 255, 255 ), "[Adult-SWEP] Version 29" )
+	end
+end)
