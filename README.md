@@ -7,6 +7,18 @@ Next launch, it should appear in the Weapons tab --> others
 
 Pills are found in the Entities tab --> Adult Swep
 
+
+Usage:
+
+LeftMouseClick=Smash something
+
+RightMouseClick=Coom
+
+Reload=Change mating position (multiplayer only)
+
+Shift + Reload=Toggle protection
+
+
 ConVars are as follows
 
 -adultswep_audrey_sounds 1
