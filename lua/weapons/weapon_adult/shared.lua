@@ -1022,7 +1022,7 @@ function SWEP:DrawHUD()
 	if hasaids then
 		surface.SetFont( "AdultSwepFont" )
 		surface.SetTextColor( 255, 255, 255, 255 )
-		surface.SetTextPos( ScrW()/2 - 40, ScrH() -100 )
+		surface.SetTextPos( ScrW()/2 - 31, ScrH() -100 )
 		surface.DrawText("You've got AIDS!")
 	end
 end
@@ -1082,11 +1082,6 @@ function SWEP:Smash(ply,targ,noaudrey)  -- this is the messy part about this tur
 	
 	local plyVictimPos = plyVictim:GetPos()
 	local plyVictimhp = plyVictim:Health()
-	
-	if self.flip == true then
-		plyVictimPos = plyAttacker:GetPos()
-		plyVictimhp = plyAttacker:Health()
-	end
 	
 	local VictimType = 1
 	if plyVictim:IsNPC() then
@@ -1278,6 +1273,7 @@ function SWEP:Smash(ply,targ,noaudrey)  -- this is the messy part about this tur
 		elseif (ragVictim:GetBoneName(ragVictim:TranslatePhysBoneToBone(i)) == "Miku.TTL01" or ragVictim:GetBoneName(ragVictim:TranslatePhysBoneToBone(i)) == "Miku.TTL02" or ragVictim:GetBoneName(ragVictim:TranslatePhysBoneToBone(i)) == "Miku.TTL03" or ragVictim:GetBoneName(ragVictim:TranslatePhysBoneToBone(i)) == "Miku.TTL04" or ragVictim:GetBoneName(ragVictim:TranslatePhysBoneToBone(i)) == "Miku.TTL05" or ragVictim:GetBoneName(ragVictim:TranslatePhysBoneToBone(i)) == "Miku.TTL06" or ragVictim:GetBoneName(ragVictim:TranslatePhysBoneToBone(i)) == "Miku.TTR01" or ragVictim:GetBoneName(ragVictim:TranslatePhysBoneToBone(i)) == "Miku.TTR02" or ragVictim:GetBoneName(ragVictim:TranslatePhysBoneToBone(i)) == "Miku.TTR03" or ragVictim:GetBoneName(ragVictim:TranslatePhysBoneToBone(i)) == "Miku.TTR04" or ragVictim:GetBoneName(ragVictim:TranslatePhysBoneToBone(i)) == "Miku.TTR05" or ragVictim:GetBoneName(ragVictim:TranslatePhysBoneToBone(i)) == "Miku.TTR06" or ragVictim:GetBoneName(ragVictim:TranslatePhysBoneToBone(i)) == "Miku.PT01" or ragVictim:GetBoneName(ragVictim:TranslatePhysBoneToBone(i)) == "Miku.PT02" or ragVictim:GetBoneName(ragVictim:TranslatePhysBoneToBone(i)) == "Miku.PT03" or ragVictim:GetBoneName(ragVictim:TranslatePhysBoneToBone(i)) == "Miku.PT04" or ragVictim:GetBoneName(ragVictim:TranslatePhysBoneToBone(i)) == "Miku.PT05" or ragVictim:GetBoneName(ragVictim:TranslatePhysBoneToBone(i)) == "Miku.PT06"  ) then
 			phys:EnableMotion(true)
 		end
+		phys:Wake()
 	end
 	
 	local ragAttacker = ents.Create("prop_ragdoll")
@@ -1413,6 +1409,7 @@ function SWEP:Smash(ply,targ,noaudrey)  -- this is the messy part about this tur
 		elseif (ragAttacker:GetBoneName(ragAttacker:TranslatePhysBoneToBone(i)) == "Miku.TTL01" or ragAttacker:GetBoneName(ragAttacker:TranslatePhysBoneToBone(i)) == "Miku.TTL02" or ragAttacker:GetBoneName(ragAttacker:TranslatePhysBoneToBone(i)) == "Miku.TTL03" or ragAttacker:GetBoneName(ragAttacker:TranslatePhysBoneToBone(i)) == "Miku.TTL04" or ragAttacker:GetBoneName(ragAttacker:TranslatePhysBoneToBone(i)) == "Miku.TTL05" or ragAttacker:GetBoneName(ragAttacker:TranslatePhysBoneToBone(i)) == "Miku.TTL06" or ragAttacker:GetBoneName(ragAttacker:TranslatePhysBoneToBone(i)) == "Miku.TTR01" or ragAttacker:GetBoneName(ragAttacker:TranslatePhysBoneToBone(i)) == "Miku.TTR02" or ragAttacker:GetBoneName(ragAttacker:TranslatePhysBoneToBone(i)) == "Miku.TTR03" or ragAttacker:GetBoneName(ragAttacker:TranslatePhysBoneToBone(i)) == "Miku.TTR04" or ragAttacker:GetBoneName(ragAttacker:TranslatePhysBoneToBone(i)) == "Miku.TTR05" or ragAttacker:GetBoneName(ragAttacker:TranslatePhysBoneToBone(i)) == "Miku.TTR06" or ragAttacker:GetBoneName(ragAttacker:TranslatePhysBoneToBone(i)) == "Miku.PT01" or ragAttacker:GetBoneName(ragAttacker:TranslatePhysBoneToBone(i)) == "Miku.PT02" or ragAttacker:GetBoneName(ragAttacker:TranslatePhysBoneToBone(i)) == "Miku.PT03" or ragAttacker:GetBoneName(ragAttacker:TranslatePhysBoneToBone(i)) == "Miku.PT04" or ragAttacker:GetBoneName(ragAttacker:TranslatePhysBoneToBone(i)) == "Miku.PT05" or ragAttacker:GetBoneName(ragAttacker:TranslatePhysBoneToBone(i)) == "Miku.PT06"  ) then
 			phys:EnableMotion(true)
 		end	
+		phys:Wake()
 	end
 	
 	local randomChance = math.random(1,12)
@@ -1549,7 +1546,6 @@ function SWEP:Smash(ply,targ,noaudrey)  -- this is the messy part about this tur
 					saydir4 = saydir4 + 1 / 7
 				end
 				physs:EnableMotion( false )
-				physs:EnableMotion( false )
 				if !getpositions == 2 then
 					physs2:EnableMotion( false )
 					physs3:EnableMotion( false )
@@ -1608,7 +1604,7 @@ function SWEP:Smash(ply,targ,noaudrey)  -- this is the messy part about this tur
 		timer.Create( thrustTimerString3, 0.1, 0, function()
 			if ragVictim and ragVictim:IsValid() then  
 				ragVictim:SetCollisionGroup(COLLISION_GROUP_WORLD)
-				ragVictim:SetCollisionGroup(COLLISION_GROUP_NONE)
+				--ragVictim:SetCollisionGroup(COLLISION_GROUP_NONE)
 			else 
 				if timer.Exists( thrustTimerString2 ) then
 					timer.Destroy( thrustTimerString2 )
@@ -1618,8 +1614,8 @@ function SWEP:Smash(ply,targ,noaudrey)  -- this is the messy part about this tur
 				end
 			end
 			if ragAttacker and ragAttacker:IsValid() then 
-				ragAttacker:SetCollisionGroup(COLLISION_GROUP_WORLD)
-				ragAttacker:SetCollisionGroup(COLLISION_GROUP_NONE)
+				--ragAttacker:SetCollisionGroup(COLLISION_GROUP_WORLD)
+				--ragAttacker:SetCollisionGroup(COLLISION_GROUP_NONE)
 			else
 				if timer.Exists( thrustTimerString ) then
 					timer.Destroy( thrustTimerString )
