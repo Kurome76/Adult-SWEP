@@ -973,68 +973,56 @@ function SWEP:DrawHUD()
 	if self.positions == 1 then
 		if self.flip == true then
 			lazimolan = "Position: DOGGY STYLE (Reverse)"
-			lazimolan2 = 235
 		else
 			lazimolan = "Position: DOGGY STYLE"
-			lazimolan2 = 165
 		end
 	elseif self.positions == 2 then
 		if self.flip == true then
 			lazimolan = "Position: ORAL SEX (Reverse)"
-			lazimolan2 = 208
 		else
 			lazimolan = "Position: ORAL SEX"
-			lazimolan2 = 158
 		end
 	elseif self.positions == 3 then
 		if self.flip == true then
 			lazimolan = "Position: GROUND SEX (Reverse)"
-			lazimolan2 = 230
 		else
 			lazimolan = "Position: GROUND SEX"
-			lazimolan2 = 180
 		end
 	elseif self.positions == 4 then
 		if self.flip == true then
 			lazimolan = "Position: FANTASY (Reverse)"
-			lazimolan2 = 202
 		else
 			lazimolan = "Position: FANTASY"
-			lazimolan2 = 152
 		end
 	else
 		if self.flip == true then
 			lazimolan = "Position: ANAL SEX (Reverse)"
-			lazimolan2 = 207
 		else
 			lazimolan = "Position: ANAL SEX"
-			lazimolan2 = 157
 		end
 	end
 	surface.SetFont( "AdultSwepFont" )
 	surface.SetTextColor( 255, 255, 255, 255 )
-	surface.SetTextPos( ScrW() - lazimolan2 , ScrH() -40 )
+	surface.SetTextPos( ScrW()/2 - 40 , ScrH() -40 )
 	surface.DrawText(lazimolan)
 	surface.SetFont( "AdultSwepFont" )
 	surface.SetTextColor( 255, 255, 255, 255 )
-	surface.SetTextPos( ScrW() - 60, ScrH() -60 )
-	surface.DrawText( math.ceil(20 + length*15.5) .. " CM" )
+	surface.SetTextPos( ScrW()/2, ScrH() -60 )
+	surface.DrawText( math.ceil(20 + length*15.5) .. " CM"  )
 	
 	if kondom == 0 then
 		kondomum = "Protection OFF"
-		poscekelimw = 135
 	else
 		kondomum = "Protection ON"
-		poscekelimw = 120
 	end
 	surface.SetFont( "AdultSwepFont" )
 	surface.SetTextColor( 255, 255, 255, 255 )
-	surface.SetTextPos( ScrW() - poscekelimw, ScrH() -80 )
+	surface.SetTextPos( ScrW()/2 - 20, ScrH() -80 )
 	surface.DrawText(kondomum)
 	if hasaids then
 		surface.SetFont( "AdultSwepFont" )
 		surface.SetTextColor( 255, 255, 255, 255 )
-		surface.SetTextPos( ScrW() - 100, ScrH() -100 )
+		surface.SetTextPos( ScrW()/2 - 40, ScrH() -100 )
 		surface.DrawText("You've got AIDS!")
 	end
 end
@@ -1886,6 +1874,7 @@ function SWEP:BeginSeggsEffects(plyAttacker, ragVictim, solgbelirle, noaudrey)
 								effectdata:SetStart( vPoint ) 
 								effectdata:SetOrigin( vPoint )
 								effectdata:SetScale( 4 )
+								effectdata:SetFlags(0)
 								util.Effect( "BloodImpact", effectdata )	
 								
 								local particle = ents.Create("info_particle_system")
